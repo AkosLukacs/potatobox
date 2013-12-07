@@ -717,6 +717,8 @@ void UartIntHandler (void) {
 		if (!uartData.procBusy) {
 			if (c == KEY_ENTER) {
 				// acknolowedge to user that packet is recieved
+				// I don't always use printf, but when i do, i do it
+				// from the interrupt handler :)
 				if (uartData.displayStats) {
 					UARTprintf("\nBytes recieved: %d\n", uartData.rxCount);
 					UARTprintf("Bytes sofar: %d\n", uartData.bytesTotal);
